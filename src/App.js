@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showQuestion: false
+      showQuestion: false 
     }
     this._onStartClick = this._onStartClick.bind(this)
   }
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   render() {
-    let showQuestion = this.state.showQuestion
+    let showQuestion = this.state.showQuestion //this.state 를 사용함으로써 위에 props에 있는 state, 즉 여기서는 showquestion의 상태를 불러옴
     if (showQuestion) {
       return this.renderQuestion()
     }

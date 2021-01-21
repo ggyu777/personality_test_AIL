@@ -305,7 +305,8 @@ class Briggs extends Component {
       <Wrapper>
         <h1 className="display-3 title">MBTI 결과</h1>
         <hr className="my-4" />
-        <h2 className="display-6 resultTxt">{this.props.resultBriggs}</h2> //여기가 결과창
+        {/* 여기가 결과창 (밑에) */}
+        <h2 className="display-6 resultTxt">{this.props.resultBriggs}</h2>  
         <hr className="my-5" />
         <p className="lead">각각의 결과는?</p>
         <ul className="list-group briggs">
