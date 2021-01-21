@@ -6,22 +6,28 @@ import QuestionCount from './QuestionCount'
 import AnswerOption from './AnswerOption'
 import { media } from '../utils/_media-queries'
 
-const Wrapper = styled.div`
+const Wrapper = styled.div` // 이게 3가지 선택 하는 질문 항목
   margin: 1em 1em;
+  
   z-index: 1;
   .row {
+    position: relative;
+    padding-top: 5em;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: center;
     ul {
-      padding: 1em 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
+     
+   
+      position: relative;
       justify-content: space-around;
       align-items: flex-start;
       flex-grow: 1;
       ${media.largerPhone`margin: 0 .8em;`};
       ${media.tablet`flex-direction: row; padding-right: 1.5em;`};
-      ${media.laptop`margin-top: 1rem;`};
+      ${media.laptop`margin-top: 7rem; padding-right: 4em;`};
     }
   }
 `

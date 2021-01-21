@@ -303,11 +303,11 @@ class Briggs extends Component {
     }
     return (
       <Wrapper>
-        <h1 className="display-3 title">Briggs Result</h1>
+        <h1 className="display-3 title">MBTI 결과</h1>
         <hr className="my-4" />
-        <h2 className="display-6 resultTxt">{this.props.resultBriggs}</h2>
+        <h2 className="display-6 resultTxt">{this.props.resultBriggs}</h2> //여기가 결과창
         <hr className="my-5" />
-        <p className="lead">What does this result mean?</p>
+        <p className="lead">각각의 결과는?</p>
         <ul className="list-group briggs">
           <li className="list-group-item" onClick={this.onISTJ_click}>
             ISTJ

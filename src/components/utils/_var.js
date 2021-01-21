@@ -7,7 +7,8 @@ const fonts = {
 const colors = {
   $colorBg: '#333',
   $colorCardBg: '#302f34',
-  $colorGold: '#d4cd96'
+  $colorGold: '#d4cd96',
+  $colorBoldRed: '#b33939'
 }
 
 export { fonts, colors }

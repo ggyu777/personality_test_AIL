@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker'
 // global styles
 injectGlobal`
   body {
-    background-color: ${colors.$colorBg};
+    background-color: ${colors.$colorBoldRed};
     color: #fff;
   }
 `

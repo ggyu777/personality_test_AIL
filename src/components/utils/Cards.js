@@ -6,9 +6,9 @@ export const IntroCard = styled.div.attrs({
   className: 'card'
 })`
   position: absolute;
-  height: 60%;
+  height: 80%;
   width: 80%;
-  top: 20%;
+  top: 10%;
   left: 0;
   right: 0;
   margin: auto;
@@ -17,8 +17,8 @@ export const IntroCard = styled.div.attrs({
   background: ${colors.$colorCardBg};
   background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent 1px, rgba(0, 0, 0, 0.3) 2px);
   background-size: 3px 3px;
-  ${media.tablet`width: 90%;`};
-  ${media.laptop`width: 60%;`};
+  ${media.tablet`width: 60%;`};
+  ${media.laptop`width: 30%;`};
   .corner {
     backface-visibility: hidden;
     border-right: 2px solid #d4cd96;
@@ -51,16 +51,20 @@ export const IntroCard = styled.div.attrs({
 export const QuestionCard = styled.div.attrs({
   className: 'card'
 })`
-  position: relative;
+  position: absolute;
+  height: 80%;
   width: 100%;
-  margin: 0 auto;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   background: ${colors.$colorCardBg};
   background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent 1px, rgba(0, 0, 0, 0.3) 2px);
   background-size: 3px 3px;
   color: #fff;
-  ${media.tablet`width: 90%;`};
-  ${media.laptop`width: 60%;`};
+  ${media.tablet`width: 60%;`};
+  ${media.laptop`width: 30%;`};
   .corner {
     backface-visibility: hidden;
     border-right: 2px solid #d4cd96;

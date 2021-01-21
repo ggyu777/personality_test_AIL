@@ -5,10 +5,12 @@ import { fonts } from '../utils/_var'
 
 const Wrapper = styled.div`
   .row {
-    margin: 1rem 0;
+    margin: rem 0;
     .col {
-      padding: 1rem;
+      position: relative;
+      padding-top: 5em; // 이게 질문
       h1 {
+        
         font-size: 1.3rem;
         font-family: ${fonts.$mainFont};
         text-align: center;
