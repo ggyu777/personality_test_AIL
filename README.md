@@ -1,7 +1,7 @@
 # React Personality Test
 git push --set-upstream origin master
 
-MBTI를 활용한 판타지 직업 심리테스트 입니다
+MBTI를 활용한 판타지 직업 심리테스트 입니다!!
 
 
 
