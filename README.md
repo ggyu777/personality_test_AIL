@@ -3,7 +3,7 @@ git push --set-upstream origin master
 
 MBTI를 활용한 판타지 직업 심리테스트 입니다!!!!!!
 
-
+재훈아 고맙다!!!!!
 
 This demo is one of my project for my class in Lasalle College / Montreal<br>
 I followed this tutorial [mitchgaven/react-multi-choice-quiz](https://mitchgavan.github.io/react-multi-choice-quiz/)<br>
