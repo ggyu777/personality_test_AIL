@@ -96,6 +96,7 @@ export const ISFP = ({ title, content, onBackClick }) => {
 }
 
 export const INFP = ({ title, content, onBackClick }) => {
+  
   return (
     <Wrapper className="container">
       <CardDef>

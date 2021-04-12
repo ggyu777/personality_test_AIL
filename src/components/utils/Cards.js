@@ -36,12 +36,12 @@ export const IntroCard = styled.div.attrs({
       transform: rotateZ(-90deg);
     }
     &:nth-of-type(3) {
-      bottom: 5%;
+      bottom: 2%;
       left: 5%;
       transform: rotateZ(180deg);
     }
     &:nth-of-type(4) {
-      bottom: 5%;
+      bottom: 2%;
       right: 5%;
       transform: rotateZ(90deg);
     }

@@ -16,9 +16,9 @@ const Wrapper = styled.div`
       .questionCount {
         position: relative;
         padding: 1em;
-        font-size: 1em;
+        font-size: 1em;ssss
         font-family: ${fonts.$latoFont};
-        color: ${colors.$colorGold};
+        color: ${colors.$colorBlack}; // 이게 퀴즈 진행도
         ${media.largerPhone`font-size: 1.2em;`};
       }
     }
@@ -31,13 +31,16 @@ const QuestionCount = props => {
       <div className="row">
         <div className="col">
           <div className="questionCount">
-            Question <span>{props.counter}</span> of <span>{props.total}</span>
           </div>
         </div>
       </div>
     </Wrapper>
   )
-}
+ 
+ 
+} // Question <span>{props.counter}</span> of <span>{props.total}</span> 원래 34번째 줄
+
+
 
 QuestionCount.PropTypes = {
   counter: PropTypes.number.isRequired,

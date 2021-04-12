@@ -20,10 +20,21 @@ import {
   ENTJ
 } from '../definitions/BriggsDef'
 
+import testim from './warrior.png'
+import ddd from './ddd.png'
+
+const imgStyle = {
+    left: "17vw",
+    textAlign: "center",
+  position: "absolute",
+
+}
 class Briggs extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      t1image:ddd,
+      t2image:ddd,
       showISTJ: false,
       showISFJ: false,
       showINFJ: false,
@@ -133,6 +144,7 @@ class Briggs extends Component {
 
   renderINFP() {
     return (
+      
       <INFP
         title={'Introvert | iNtuitive | Feeling | Perceiving'}
         content={`You are a type INFP, aka The Healer.
@@ -250,8 +262,15 @@ class Briggs extends Component {
       />
     )
   }
-
+  
+  componentWillMount(){
+    if(this.props.resultBriggs === 'INFP'){	//갖고온 pm10Grade가 1이면 진입
+      this.setState({t1image: testim})
+    }
+   }
+  
   render() {
+    
     let showISTJ = this.state.showISTJ
     let showISFJ = this.state.showISFJ
     let showINFJ = this.state.showINFJ
@@ -301,72 +320,21 @@ class Briggs extends Component {
     } else if (showENTJ) {
       return this.renderENTJ()
     }
+    
+   
     return (
       <Wrapper>
         <h1 className="display-3 title">MBTI 결과</h1>
         <hr className="my-4" />
         {/* 여기가 결과창 (밑에) */}
+
         <h2 className="display-6 resultTxt">{this.props.resultBriggs}</h2>  
+        <img src={this.state.t1image} id="resultImage" style={imgStyle} alt="profile"/>
         <hr className="my-5" />
-        <p className="lead">각각의 결과는?</p>
-        <ul className="list-group briggs">
-          <li className="list-group-item" onClick={this.onISTJ_click}>
-            ISTJ
-          </li>
-          <li className="list-group-item" onClick={this.onISFJ_click}>
-            ISFJ
-          </li>
-          <li className="list-group-item" onClick={this.onINFJ_click}>
-            INFJ
-          </li>
-          <li className="list-group-item" onClick={this.onINTJ_click}>
-            INTJ
-          </li>
-        </ul>
-        <ul className="list-group briggs">
-          <li className="list-group-item" onClick={this.onISTP_click}>
-            ISTP
-          </li>
-          <li className="list-group-item" onClick={this.onISFP_click}>
-            ISFP
-          </li>
-          <li className="list-group-item" onClick={this.onINFP_click}>
-            INFP
-          </li>
-          <li className="list-group-item" onClick={this.onINTP_click}>
-            INTP
-          </li>
-        </ul>
-        <ul className="list-group briggs">
-          <li className="list-group-item" onClick={this.onESTP_click}>
-            ESTP
-          </li>
-          <li className="list-group-item" onClick={this.onESFP_click}>
-            ESFP
-          </li>
-          <li className="list-group-item" onClick={this.onENFP_click}>
-            ENFP
-          </li>
-          <li className="list-group-item" onClick={this.onENTP_click}>
-            ENTP
-          </li>
-        </ul>
-        <ul className="list-group briggs">
-          <li className="list-group-item" onClick={this.onESTJ_click}>
-            ESTJ
-          </li>
-          <li className="list-group-item" onClick={this.onESFJ_click}>
-            ESFJ
-          </li>
-          <li className="list-group-item" onClick={this.onENFJ_click}>
-            ENFJ
-          </li>
-          <li className="list-group-item" onClick={this.onENTJ_click}>
-            ENTJ
-          </li>
-        </ul>
+       
       </Wrapper>
     )
+    
   }
 
   onISTJ_click() {
@@ -447,7 +415,7 @@ class Briggs extends Component {
   onENTJ_click() {
     let showENTJ = this.state.showENTJ
     this.setState({ showENTJ: !showENTJ })
-  }
+  } 
 }
 
 Briggs.PropTypes = {

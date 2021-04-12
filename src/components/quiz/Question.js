@@ -4,14 +4,16 @@ import styled from 'styled-components'
 import { fonts } from '../utils/_var'
 
 const Wrapper = styled.div`
+
   .row {
-    margin: rem 0;
+    margin: 1.2vw;
     .col {
-      position: relative;
-      padding-top: 5em; // 이게 질문
+      position: absolute;
+      max-width: 90%;
+      top: 27vh; // 이게 질문
       h1 {
         
-        font-size: 1.3rem;
+        font-size: 2.8vh;
         font-family: ${fonts.$mainFont};
         text-align: center;
       }

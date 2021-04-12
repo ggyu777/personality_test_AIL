@@ -29,9 +29,11 @@ class Results extends Component {
     /*let showColorsResult = this.state.showColorsResult
     let showLettersResult = this.state.showLettersResult*/
     let showBriggsResult = this.state.showBriggsResult
-   
+  
+  
     if (showBriggsResult) {
       return this.renderBriggsResult()
+      
     }
   }
 

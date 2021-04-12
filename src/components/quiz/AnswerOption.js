@@ -6,40 +6,44 @@ import { fonts, colors } from '../utils/_var'
 const Wrapper = styled.div`
   li {
     list-style-type: none;
+   
     input {
       position: absolute;
       opacity: 0;
       z-index: -1;
       & + label::before {
-        border-radius: 18px;
+        border-radius: 18px; // 이게 네모를 동그라미로 깎음
       }
       &:checked + label {
         padding-left: 2rem;
         color: #fff;
       }
-      &:checked + label::before {
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: ${colors.$colorGold};
+         &:checked + label::before {
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: ${colors.$colorGold};
+        }
+        color: #fff;
       }
+     
     }
     label {
       position: relative;
       padding-left: 3rem;
-      line-height: 2.3rem;
+      line-height: 1rem; // 줄 간격
       cursor: pointer;
       font-family: ${fonts.$mainFont};
-      color: ${colors.$colorGold};
+      color: ${colors.$colorBlack};   // 이부분이 선택지
       &::before {
         content: '';
         position: absolute;
-        top: 5px;
+        top: 0.1px;
         left: 1rem;
         display: block;
         width: 25px;
         height: 25px;
-        border: 2px solid ${colors.$colorGold};
+        border: 2px solid ${colors.$colorBlack}; // 요게똥그라미
         border-radius: 4px;
         z-index: -1;
       }

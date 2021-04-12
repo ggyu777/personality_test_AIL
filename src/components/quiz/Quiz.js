@@ -5,29 +5,32 @@ import Question from './Question'
 import QuestionCount from './QuestionCount'
 import AnswerOption from './AnswerOption'
 import { media } from '../utils/_media-queries'
-
+import {  colors } from '../utils/_var'
 const Wrapper = styled.div` // 이게 3가지 선택 하는 질문 항목
-  margin: 1em 1em;
+  margin-top: 5vh;
   
-  z-index: 1;
-  .row {
-    position: relative;
-    padding-top: 5em;
-    margin: 0;
+  z-index: 1; 
+  .row { // 이게 질문 전체
+      
+
+    top: 50vh;
     display: flex;
-    flex-direction: column;
-    
+    width:90%;
+    left:15px;
+    font-size: 2.2vh;
+    color: ${colors.$colorBlack};
     text-align: center;
     ul {
-     
-   
+     // 요게 질문 밑에 선택지 박스!
+      left: 1.5vw;
       position: relative;
+      top: 48.6vh;
       justify-content: space-around;
       align-items: flex-start;
       flex-grow: 1;
-      ${media.largerPhone`margin: 0 .8em;`};
+      ${media.largerPhone` width:100%;`};
       ${media.tablet`flex-direction: row; padding-right: 1.5em;`};
-      ${media.laptop`margin-top: 7rem; padding-right: 4em;`};
+      ${media.laptop`padding-bottom: 1vh;`};
     }
   }
 `

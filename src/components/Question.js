@@ -6,6 +6,7 @@ import Results from '../components/result/Results'
 import quizQuestions from '../api/quizQuestions'
 import { QuestionCard } from '../components/utils/Cards'
 
+
 const Wrapper = styled.div`
   position: fixed;
   min-height: 100%;
@@ -15,6 +16,14 @@ const Wrapper = styled.div`
   justify-content: center;
   background: ${colors.$colorBoldRed};
 `
+
+const imgStyle = {
+  height: "80vh",  
+    width: "29.85vw",
+    textAlign: "center",
+  position: "absolute",
+
+}
 
 class Question extends Component {
   constructor(props) {
@@ -26,7 +35,7 @@ class Question extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {
-        Colors: {
+       /* Colors: {
           Green: 10,
           Brown: 10,
           Blue: 10,
@@ -37,7 +46,7 @@ class Question extends Component {
           B: 10,
           C: 10,
           D: 10
-        },
+        },*/
         Briggs: {
           E: 5,
           I: 5,
@@ -71,16 +80,16 @@ class Question extends Component {
     let applyAnswer = answer => {
       const answer_array = answer.split(',')
       let briggsAnswer = answer_array[0]
-      let colorsAnswer = answer_array[1]
-      let lettersAnswer = answer_array[2]
-      if (answer_array.length === 3) {
+     /* let colorsAnswer = answer_array[1]
+      let lettersAnswer = answer_array[2]*/
+      if (answer_array.length === 1) {
         answersCount['Briggs'][briggsAnswer] += 1
-        answersCount['Colors'][colorsAnswer] += 1
-        answersCount['Letters'][lettersAnswer] += 1
-      } else if (answer_array.length === 4) {
+      /*  answersCount['Colors'][colorsAnswer] += 1
+        answersCount['Letters'][lettersAnswer] += 1*/
+      } else if (answer_array.length === 2) {
         answersCount['Briggs'][briggsAnswer] -= 1
-        answersCount['Colors'][colorsAnswer] -= 1
-        answersCount['Letters'][lettersAnswer] -= 1
+      /*  answersCount['Colors'][colorsAnswer] -= 1
+        answersCount['Letters'][lettersAnswer] -= 1*/
       }
       return answersCount
     }
@@ -101,6 +110,7 @@ class Question extends Component {
       answerOptions: quizQuestions[counter].answers,
       answer: ''
     })
+ 
   }
 
   // setting the answer and then setting the next question
@@ -109,7 +119,7 @@ class Question extends Component {
     if (this.state.questionId < quizQuestions.length) {
       setTimeout(() => this.setNextQuestion(), 800)
     } else {
-      setTimeout(() => this.setResults(this.getColorsResults(), this.getLettersResults(), this.getBriggsResults()), 800)
+      setTimeout(() => this.setResults(/*this.getColorsResults(), this.getLettersResults(), */this.getBriggsResults()), 800)
     }
   }
 
@@ -119,8 +129,8 @@ class Question extends Component {
   getBriggsResults() {
     const answerCount = this.state.answersCount
     const briggsAnswer = answerCount['Briggs']
-  //  const answersCountKeysBriggs = Object.keys(briggsAnswer)
-  //  const answersCountValuesBriggs = answersCountKeysBriggs.map(key => briggsAnswer[key])
+//  const answersCountKeysBriggs = Object.keys(briggsAnswer)
+  // const answersCountValuesBriggs = answersCountKeysBriggs.map(key => briggsAnswer[key])
     let briggsType = ''
     if (briggsAnswer.E >= briggsAnswer.I) {
       briggsType += 'E'
@@ -137,7 +147,7 @@ class Question extends Component {
     return briggsType
   }
 
-  getColorsResults() {
+/*  getColorsResults() {
     const answersCount = this.state.answersCount
     const colorsAnswer = answersCount['Colors']
     const answersCountKeysColors = Object.keys(colorsAnswer)
@@ -153,20 +163,20 @@ class Question extends Component {
     const answersCountValuesLetters = answersCountKeysLetters.map(key => lettersAnswer[key])
     const maxAnswerCountLetters = Math.max.apply(null, answersCountValuesLetters)
     return answersCountKeysLetters.filter(key => lettersAnswer[key] === maxAnswerCountLetters)
-  }
+  }*/
 
   // ===========================================================================
   //                        set results
   // ===========================================================================
-  setResults(resultColors, resultLetters, resultBriggs) {
-    if (resultColors.length >= 1) {
+  setResults(/*resultColors, resultLetters,*/ resultBriggs) {
+  /*  if (resultColors.length >= 1) {
       this.setState({ resultColors: resultColors[0] })
     }
     if (resultLetters.length >= 1) {
       this.setState({ resultLetters: resultLetters[0] })
-    }
-    if (resultBriggs.length >= 1) {
-      this.setState({ resultBriggs: resultBriggs })
+    }*/
+    if (resultBriggs.length >= 1){
+      this.setState ({ resultBriggs: resultBriggs })
     }
   }
 
@@ -174,6 +184,7 @@ class Question extends Component {
   //                    functions to render quiz
   // ===========================================================================
   renderQuiz() {
+    
     return (
       <Quiz
         answer={this.state.answer}
@@ -182,7 +193,9 @@ class Question extends Component {
         question={this.state.question}
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
+        
       />
+      
     )
   }
 
@@ -192,8 +205,8 @@ class Question extends Component {
   renderResult() {
     return (
       <Results
-        resultColors={this.state.resultColors}
-        resultLetters={this.state.resultLetters}
+        //resultColors={this.state.resultColors}
+        //resultLetters={this.state.resultLetters}
         resultBriggs={this.state.resultBriggs}
       />
     )
@@ -207,17 +220,77 @@ class Question extends Component {
     if (resultBriggs) {
       return this.renderResult()
     }
+
+      if(this.state.counter===1)
+      {
+    document.getElementById("testimg").src = "images/qustion2.jpg";
+  
+      }
+      if(this.state.counter===2)
+      {
+    document.getElementById("testimg").src = "images/qustion3.jpg";
+  
+      }
+      if(this.state.counter===3)
+      {
+    document.getElementById("testimg").src = "images/qustion4.jpg";
+  
+      }
+      if(this.state.counter===4)
+      {
+    document.getElementById("testimg").src = "images/qustion5.jpg";
+  
+      }
+      if(this.state.counter===5)
+      {
+    document.getElementById("testimg").src = "images/qustion6.jpg";
+  
+      }
+      if(this.state.counter===6)
+      {
+    document.getElementById("testimg").src = "images/qustion7.jpg";
+  
+      }
+      if(this.state.counter===7)
+      {
+    document.getElementById("testimg").src = "images/qustion8.jpg";
+  
+      }
+      if(this.state.counter===8)
+      {
+    document.getElementById("testimg").src = "images/qustion9.jpg";
+  
+      }
+      if(this.state.counter===9)
+      {
+    document.getElementById("testimg").src = "images/qustion10.jpg";
+  
+      }
+      if(this.state.counter===10)
+      {
+    document.getElementById("testimg").src = "images/qustion11.jpg";
+  
+      }
+
+      if(this.state.counter===11)
+      {
+    document.getElementById("testimg").src = "images/qustion12.jpg";
+  
+      }
+        
     return (
+      
       <Wrapper className="container">
         <QuestionCard>
-          <div className="corner" />
-          <div className="corner" />
-          <div className="corner" />
-          <div className="corner" />
+      
+      <img src="images/qustion1.jpg" id="testimg" style={imgStyle} alt="profile"/>
+  
+       
           {this.renderQuiz()}
         </QuestionCard>
       </Wrapper>
     )
+    
   }
 }
 

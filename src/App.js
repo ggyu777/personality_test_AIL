@@ -13,7 +13,9 @@ class App extends Component {
   }
 
   renderIntro() {
-    return <Intro _onStartClick={this._onStartClick} title="판타지 직업 & 포션 테스트" />
+    return <Intro _onStartClick={this._onStartClick} title="" />
+    
+    // 여기가 타이틀
   }
 
   renderQuestion() {
