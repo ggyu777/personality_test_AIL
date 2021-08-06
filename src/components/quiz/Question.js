@@ -6,17 +6,31 @@ import { fonts } from '../utils/_var'
 const Wrapper = styled.div`
 
   .row {
-    margin: 1.2vw;
+    margin: 2vw;
     .col {
       position: absolute;
-      max-width: 90%;
-      top: 27vh; // 이게 질문
+      max-width: 85%;
+
+      top: 24.2vh; // 이게 질문
+      @media screen and (min-width: 414px) and (max-width: 768px)
+      {
+        top: 20vh;   left: 6vw;
+      }  
+    }
       h1 {
-        
+        line-height: 5vh;
+
         font-size: 2.8vh;
         font-family: ${fonts.$mainFont};
         text-align: center;
-      }
+
+        @media screen and (min-width: 414px) and (max-width: 768px)
+        {
+         font-size: 1.8vh; line-height: 3vh; 
+
+  
+        }  
+
     }
   }
 `

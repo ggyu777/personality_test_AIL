@@ -6,8 +6,9 @@ export const IntroCard = styled.div.attrs({
   className: 'card'
 })`
   position: absolute;
-  height: 80%;
+  height: 75%;
   width: 80%;
+
   top: 10%;
   left: 0;
   right: 0;
@@ -18,7 +19,13 @@ export const IntroCard = styled.div.attrs({
   background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent 1px, rgba(0, 0, 0, 0.3) 2px);
   background-size: 3px 3px;
   ${media.tablet`width: 60%;`};
-  ${media.laptop`width: 30%;`};
+  ${media.laptop`width: 30%; `};
+  
+  @media screen and (min-width: 414px) and (max-width: 768px)
+  {
+    width: 80%; height:58.3%; top:20vh;
+  }
+
   .corner {
     backface-visibility: hidden;
     border-right: 2px solid #d4cd96;
@@ -52,8 +59,8 @@ export const QuestionCard = styled.div.attrs({
   className: 'card'
 })`
   position: absolute;
-  height: 80%;
-  width: 100%;
+  height: 75%;
+  width: 80%;
   top: 10%;
   left: 0;
   right: 0;
@@ -65,6 +72,11 @@ export const QuestionCard = styled.div.attrs({
   color: #fff;
   ${media.tablet`width: 60%;`};
   ${media.laptop`width: 30%;`};
+  @media screen and (min-width: 414px) and (max-width: 768px)
+  {
+    width: 80%; height:55%; top:20vh;
+  }
+
   .corner {
     backface-visibility: hidden;
     border-right: 2px solid #d4cd96;
@@ -107,6 +119,7 @@ export const CardDef = styled.div.attrs({
   color: #fff;
   ${media.tablet`width: 90%;`};
   ${media.laptop`width: 60%;`};
+  
   h1 {
     position: relative;
     font-family: ${fonts.$titleFont};

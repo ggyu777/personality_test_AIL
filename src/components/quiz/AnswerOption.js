@@ -5,11 +5,14 @@ import { fonts, colors } from '../utils/_var'
 
 const Wrapper = styled.div`
   li {
-    list-style-type: none;
-   
+    list-style-type: "\\25b6";
+    left:1vw;
+
+    
     input {
       position: absolute;
       opacity: 0;
+    
       z-index: -1;
       & + label::before {
         border-radius: 18px; // 이게 네모를 동그라미로 깎음
@@ -30,22 +33,28 @@ const Wrapper = styled.div`
     }
     label {
       position: relative;
-      padding-left: 3rem;
+      padding-left: 1.5rem;
       line-height: 1rem; // 줄 간격
+
+      @media screen and (min-width: 414px) and (max-width: 768px)  // 화살표랑 선택지 간격
+      {
+        line-height: 1.5vh; right:3vw;
+      }
+      
       cursor: pointer;
       font-family: ${fonts.$mainFont};
       color: ${colors.$colorBlack};   // 이부분이 선택지
       &::before {
         content: '';
         position: absolute;
-        top: 0.1px;
-        left: 1rem;
+        left: 1.4rem;
         display: block;
-        width: 25px;
-        height: 25px;
-        border: 2px solid ${colors.$colorBlack}; // 요게똥그라미
-        border-radius: 4px;
+        width: 15px;
+        height: 15px;
+        
+      
         z-index: -1;
+     
       }
       &,
       &::before {

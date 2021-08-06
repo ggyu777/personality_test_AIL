@@ -7,30 +7,36 @@ import AnswerOption from './AnswerOption'
 import { media } from '../utils/_media-queries'
 import {  colors } from '../utils/_var'
 const Wrapper = styled.div` // 이게 3가지 선택 하는 질문 항목
-  margin-top: 5vh;
   
   z-index: 1; 
   .row { // 이게 질문 전체
-      
+    top: 63.5vh;
 
-    top: 50vh;
     display: flex;
     width:90%;
-    left:15px;
+    padding-left:0.3vw;
     font-size: 2.2vh;
     color: ${colors.$colorBlack};
-    text-align: center;
     ul {
      // 요게 질문 밑에 선택지 박스!
-      left: 1.5vw;
-      position: relative;
-      top: 48.6vh;
+      position: absolute;
+      top: 60.2vh;
+      left:2vw;
+
+      text-align: center;
+      display: flex;
+      flex-direction:column;
       justify-content: space-around;
       align-items: flex-start;
-      flex-grow: 1;
-      ${media.largerPhone` width:100%;`};
-      ${media.tablet`flex-direction: row; padding-right: 1.5em;`};
-      ${media.laptop`padding-bottom: 1vh;`};
+      flex-grow: 0;
+      height:11.5vh;
+      width: 26vw;
+      @media screen and (min-width: 414px) and (max-width: 768px)
+      {
+        height:55%; top:20vh; font-size: 1.7vh; height:1vh;    top: 48vh;   width: 95%;   left:1.2vw;
+
+      }
+
     }
   }
 `

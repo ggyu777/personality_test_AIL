@@ -5,7 +5,7 @@ const sizes = {
   laptop: 1224,
   tablet: 775,
   largerPhone: 510,
-  smallerPhone: 414
+  smallerPhone: 414,
 }
 
 // iterate through the sizes and create a media template
@@ -17,6 +17,8 @@ export const media = Object.keys(sizes).reduce((accumulator, label) => {
     @media (min-width: ${emSize}em) {
       ${css(...args)};
     }
+  
+
   `
   return accumulator
 }, {})

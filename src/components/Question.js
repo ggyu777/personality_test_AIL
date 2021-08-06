@@ -15,14 +15,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   background: ${colors.$colorBoldRed};
+
 `
 
 const imgStyle = {
-  height: "80vh",  
-    width: "29.85vw",
-    textAlign: "center",
-  position: "absolute",
-
+  height: "100%",  
+    width: "100%",
 }
 
 class Question extends Component {

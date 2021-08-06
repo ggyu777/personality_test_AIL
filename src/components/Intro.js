@@ -9,14 +9,21 @@ import { media } from '../components/utils/_media-queries'
 const imgStyle = {
   height: "100%",  
     width: "100%",
- 
+    
+   
+}
+const fontStyle ={
+  fontFamily: 'DungGeunMo, sans-serif',
+  textAlign: 'center',
+  left:'1.8vw',
+  fontSize:'3vh',
 }
 
-
 const Wrapper = styled.div`
-  position: fixed;
-  min-height: 90%;
-  max-width: 90%;
+
+  position: absolute;
+  min-height: 100%;
+  max-width: 100%;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -28,12 +35,9 @@ const Wrapper = styled.div`
     font-family: ${fonts.$titleFont};
     font-size: 1.1em;
     color: ${colors.$colorGold};
-    text-align: center;
 
     padding-top: 7em;  //여기가 판타지 직업 & 포션 테스트 항목
-    ${media.tablet`font-size: 1.5em; letter-spacing: 1.5px;`};
-    ${media.laptop`font-size: 2em; letter-spacing: 2px;`};
-    ${media.smallerPhone`text-align: center;`};
+
 
 
   }
@@ -46,7 +50,7 @@ const Wrapper = styled.div`
       border: 0;
       margin-bottom: 0;
       color: ${colors.$colorGold};
-      ${media.tablet`font-size: 1.3em`};
+ 
       text-align: center;
     }
     
@@ -75,7 +79,8 @@ const Intro = ({ title, _onStartClick }) => {
       
         </ul>
         <StartBtn onClick={_onStartClick}>
-          <span>시작하기!</span>
+          <span style={fontStyle}>모험 시작!</span>
+          
           <div className="icon">
             <i className="fa fa-arrow-right" />
           </div>
